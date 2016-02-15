@@ -1,23 +1,22 @@
 package com.magic.wiraazharan.kellyjapan;
 
 
-        import android.app.Activity;
-        import android.content.Intent;
+import android.app.Activity;
+import android.content.Intent;
 
-        import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
 
-        import android.os.CountDownTimer;
+import android.os.CountDownTimer;
 
-        import android.os.Bundle;
+import android.os.Bundle;
 
-        import android.view.View;
+import android.view.View;
 
-        import android.widget.ImageView;
+import android.widget.ImageView;
 
-        import android.widget.Button;
+import android.widget.Button;
 
 public class MainActivity2 extends Activity implements View.OnClickListener {
-
 
 
 //    ImageView imageView1;
@@ -359,8 +358,8 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
     }
 
 
-//Timer for PreProcess
-    public void PreProcess(int timer1, int timer2,  int timer3, int timer4, int timer5) {
+    //Timer for PreProcess
+    public void PreProcess(int timer1, int timer2, int timer3, int timer4, int timer5) {
 
         RunTimer(timer1, 1);
         RunTimer(timer2, 2);
@@ -370,7 +369,7 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
     }
 
     //Timer to show button
-    private void TimeToShowButton (int mytimer1){
+    private void TimeToShowButton(int mytimer1) {
 
         new CountDownTimer(mytimer1, 1000) {
 
@@ -385,8 +384,9 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
             }
         }.start();
     }
+
     //Timer to display multiple images with different time interval
-    private void RunTimer(int myTimer, final int position){
+    private void RunTimer(int myTimer, final int position) {
 
         new CountDownTimer(myTimer, 1000) {
 
@@ -399,26 +399,12 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
             }
         }.start();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
     //Implement onClick on button
 //Prompt to button click, loop continue
     public void onClick(View view) {
-        switch (view.getId())
-        {
+        switch (view.getId()) {
             case R.id.buttonYes:
                 k++;
                 loopimageArray();
@@ -432,35 +418,23 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
     }
 
 
+    //If there is no button click within 2.0s, loop continue
+    private class MyCountDownTimer extends CountDownTimer {
 
+        public MyCountDownTimer(long millisinfuture, long countDownInterval) {
+            super(millisinfuture, countDownInterval);
+        }
 
+        @Override
+        public void onTick(long l) {
 
+        }
 
-
-
-
-
-
-
-
-
-//If there is no button click within 2.0s, loop continue
-private class MyCountDownTimer extends CountDownTimer{
-
-    public MyCountDownTimer(long millisinfuture , long countDownInterval){
-        super(millisinfuture,countDownInterval);
+        @Override
+        public void onFinish() {
+            //CONTINUE LOOP
+        }
     }
-
-    @Override
-    public void onTick(long l) {
-
-    }
-
-    @Override
-    public void onFinish() {
-        //CONTINUE LOOP
-    }
-}
 
 }
 
