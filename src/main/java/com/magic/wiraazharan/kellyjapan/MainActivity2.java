@@ -28,8 +28,6 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
 
     int[] imageArray;
 
-    int i;
-
     Button buttonYes;
 
     Button buttonNo;
@@ -81,7 +79,7 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
 
         //Loop for imageArray
 
-        for (i = 0;  i<imageArray.length; i++){
+        for (int i = 0;  i<imageArray.length; i++){
 
             imageView1.setImageResource(imageArray[0]);
 
