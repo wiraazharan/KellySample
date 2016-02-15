@@ -273,7 +273,7 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
 
     int[] imageArray;
 
-    int i;
+    int k = 0;
 
     Button buttonYes;
     Button buttonNo;
@@ -299,10 +299,10 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
 //Question array
         question = new int[10];
         question[0] = R.drawable.image1;
-        question[1] = R.drawable.image1;
-        question[2] = R.drawable.image1;
-        question[3] = R.drawable.image1;
-        question[4] = R.drawable.image1;
+        question[1] = R.drawable.image2;
+        question[2] = R.drawable.image3;
+        question[3] = R.drawable.image4;
+        question[4] = R.drawable.image5;
         question[5] = R.drawable.image1;
         question[6] = R.drawable.image1;
         question[7] = R.drawable.image1;
@@ -312,46 +312,52 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
 
 //Answer array
         answer = new int[10];
-        answer[0] = R.drawable.redcross;
-        answer[1] = R.drawable.redcross;
-        answer[2] = R.drawable.redcross;
-        answer[3] = R.drawable.redcross;
-        answer[4] = R.drawable.redcross;
-        answer[5] = R.drawable.redcross;
-        answer[6] = R.drawable.redcross;
-        answer[7] = R.drawable.redcross;
-        answer[8] = R.drawable.redcross;
-        answer[9] = R.drawable.redcross;
+        answer[0] = R.drawable.image1;
+        answer[1] = R.drawable.image2;
+        answer[2] = R.drawable.image3;
+        answer[3] = R.drawable.image4;
+        answer[4] = R.drawable.image5;
+        answer[5] = R.drawable.image1;
+        answer[6] = R.drawable.image1;
+        answer[7] = R.drawable.image1;
+        answer[8] = R.drawable.image1;
+        answer[9] = R.drawable.image1;
 
 //ImageView array
         imageArray = new int[5];
-        imageArray[0] = R.drawable.image2;
-        imageArray[1] = R.drawable.image3;
-        imageArray[2] = question[i];
-        imageArray[3] = R.drawable.image4;
-        imageArray[4] = answer[i];
+        imageArray[0] = R.drawable.greycross;
+        imageArray[1] = R.drawable.redcross;
+        imageArray[2] = question[k];
+        imageArray[3] = R.drawable.redcross;
+        imageArray[4] = answer[k];
 
         imageView1 = (ImageView) findViewById(R.id.imageView1);
 
+        loopimageArray();
+
+    }
+//        }
+//    }
+
+    public void loopimageArray() {
         //Loop for imageArray
-        for (i = 0; i < imageArray.length; i++) {
+        for (int i = 0; i < imageArray.length; i++) {
             imageView1.setImageResource(imageArray[0]);
-            for (int j = 0; j < question.length; j++) {
-                for (int k = 0; k < answer.length; k++) {
+//            for (int j = 0; j < question.length; j++) {
+//                for (int k = 0; k < answer.length; k++) {
 
 //PreProcess (img1, img2, ques, img1, ans)
-                    PreProcess(15000, 15500, 17000, 24000, 26000);
+            PreProcess(15000, 15500, 17000, 24000, 26000);
 
 //TimeToShowButton
-                    TimeToShowButton(29000);
+            TimeToShowButton(29000);
 
 //Time for one loop to end before continuing another loop
-                    timer = new MyCountDownTimer(34000, 1000);
-                    timer.start();
-                }
-            }
+            timer = new MyCountDownTimer(34000, 1000);
+            timer.start();
         }
     }
+
 
 //Timer for PreProcess
     public void PreProcess(int timer1, int timer2,  int timer3, int timer4, int timer5) {
@@ -414,11 +420,13 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
         switch (view.getId())
         {
             case R.id.buttonYes:
-                //CONTINUE LOOP
+                k++;
+                loopimageArray();
                 break;
 
             case R.id.buttonNo:
-                //CONTINUE LOOP
+                k++;
+                loopimageArray();
                 break;
         }
     }
