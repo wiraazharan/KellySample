@@ -4,6 +4,7 @@ package com.magic.wiraazharan.kellyjapan;
 import android.app.Activity;
 import android.content.Intent;
 
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 
 import android.os.CountDownTimer;
@@ -343,11 +344,9 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
         imageArray[4] = answer[k];
 
 
-        //Loop for imageArray
-        for (int i = 0; i < imageArray.length; i++) {
+
             imageView1.setImageResource(imageArray[0]);
-//            for (int j = 0; j < question.length; j++) {
-//                for (int k = 0; k < answer.length; k++) {
+
 
 //PreProcess (img1, img2, ques, img1, ans)
             PreProcess(15000, 15500, 17000, 24000, 26000);
@@ -355,21 +354,21 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
 //TimeToShowButton
             TimeToShowButton(29000);
 
-//Time for one loop to end before continuing another loop
+
             timer = new MyCountDownTimer(34000, 1000);
             timer.start();
-        }
+        //}
     }
 
 
     //Timer for PreProcess
     public void PreProcess(int timer1, int timer2, int timer3, int timer4, int timer5) {
 
-        RunTimer(timer1, 1);
-        RunTimer(timer2, 2);
-        RunTimer(timer3, 2);
-        RunTimer(timer4, 3);
-        RunTimer(timer5, 4);
+        RunTimer(timer1, 1 );
+        RunTimer(timer2, 2 );
+        RunTimer(timer3, 2 );
+        RunTimer(timer4, 3 );
+        RunTimer(timer5, 4 );
     }
 
     //Timer to show button
@@ -410,14 +409,21 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.buttonYes:
-                k++;
-                loopimageArray();
+                if (k!=10) {
+                    k++;
+                    loopimageArray();
+                    buttonYes.setVisibility(View.INVISIBLE);
+                    buttonNo.setVisibility(View.INVISIBLE);
+                }
                 break;
 
             case R.id.buttonNo:
-                k++;
-                loopimageArray();
-                break;
+                if (k!=10) {
+                    k++;
+                    loopimageArray();
+                    buttonYes.setVisibility(View.INVISIBLE);
+                    buttonNo.setVisibility(View.INVISIBLE);
+                }
         }
     }
 
@@ -436,8 +442,12 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
 
         @Override
         public void onFinish() {
-            k++;
-            loopimageArray();
+            if (k!=10) {
+                k++;
+                loopimageArray();
+                buttonYes.setVisibility(View.INVISIBLE);
+                buttonNo.setVisibility(View.INVISIBLE);
+            }
         }
     }
 
