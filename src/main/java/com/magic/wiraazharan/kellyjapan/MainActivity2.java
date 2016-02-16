@@ -297,30 +297,30 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
 
 //Question array
         question = new int[10];
-        question[0] = R.drawable.image1;
-        question[1] = R.drawable.image2;
-        question[2] = R.drawable.image3;
-        question[3] = R.drawable.image4;
-        question[4] = R.drawable.image5;
-        question[5] = R.drawable.image1;
-        question[6] = R.drawable.image1;
-        question[7] = R.drawable.image1;
-        question[8] = R.drawable.image1;
-        question[9] = R.drawable.image1;
+        question[0] = R.drawable.ques1;
+        question[1] = R.drawable.ques2;
+        question[2] = R.drawable.ques3;
+        question[3] = R.drawable.ques4;
+        question[4] = R.drawable.ques5;
+        question[5] = R.drawable.ques6;
+        question[6] = R.drawable.ques7;
+        question[7] = R.drawable.ques8;
+        question[8] = R.drawable.ques9;
+        question[9] = R.drawable.ques10;
 
 
 //Answer array
         answer = new int[10];
-        answer[0] = R.drawable.image1;
-        answer[1] = R.drawable.image2;
-        answer[2] = R.drawable.image3;
-        answer[3] = R.drawable.image4;
-        answer[4] = R.drawable.image5;
-        answer[5] = R.drawable.image1;
-        answer[6] = R.drawable.image1;
-        answer[7] = R.drawable.image1;
-        answer[8] = R.drawable.image1;
-        answer[9] = R.drawable.image1;
+        answer[0] = R.drawable.red1;
+        answer[1] = R.drawable.red2;
+        answer[2] = R.drawable.red3;
+        answer[3] = R.drawable.red4;
+        answer[4] = R.drawable.red5;
+        answer[5] = R.drawable.red6;
+        answer[6] = R.drawable.red7;
+        answer[7] = R.drawable.red8;
+        answer[8] = R.drawable.red9;
+        answer[9] = R.drawable.red10;
 
 //ImageView array
         imageArray = new int[5];
