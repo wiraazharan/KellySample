@@ -436,7 +436,8 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
 
         @Override
         public void onFinish() {
-            //CONTINUE LOOP
+            k++;
+            loopimageArray();
         }
     }
 
