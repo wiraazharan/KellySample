@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity2 extends Activity implements View.OnClickListener {
 
@@ -409,21 +410,34 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.buttonYes:
-                if (k<=9) {
+                if (k==9) {
+                    Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(MainActivity2.this,MainActivity.class);
+                    startActivity(i);
+                }else
+                {
                     k++;
                     loopimageArray();
                     buttonYes.setVisibility(View.INVISIBLE);
                     buttonNo.setVisibility(View.INVISIBLE);
+
                 }
                 break;
 
             case R.id.buttonNo:
-                if (k<=9) {
+                if (k==9) {
+                    Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(MainActivity2.this,MainActivity.class);
+                    startActivity(i);
+                }else
+                {
                     k++;
                     loopimageArray();
                     buttonYes.setVisibility(View.INVISIBLE);
                     buttonNo.setVisibility(View.INVISIBLE);
+
                 }
+                break;
         }
     }
 
@@ -442,11 +456,17 @@ public class MainActivity2 extends Activity implements View.OnClickListener {
 
         @Override
         public void onFinish() {
-            if (k<=9) {
+            if (k==9) {
+                Toast.makeText(getApplicationContext(),"test",Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(MainActivity2.this,MainActivity.class);
+                startActivity(i);
+            }else
+            {
                 k++;
                 loopimageArray();
                 buttonYes.setVisibility(View.INVISIBLE);
                 buttonNo.setVisibility(View.INVISIBLE);
+
             }
         }
     }
